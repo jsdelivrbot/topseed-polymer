@@ -25,7 +25,7 @@ var TP = { //class:
 
 					//firefox
 					HTMLImports.whenReady(function() {
-						Polymer.importHref(url, function() {
+						Polymer.Base.importHref(url, function() {
 							console.log('importHref done')
 							return resolve('OK')
 						})

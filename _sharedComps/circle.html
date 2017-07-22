@@ -10,16 +10,16 @@
   <!--http://github.com/lugolabs/circles-->
   <script>
     var circleEl
-    class CircleEl extends Polymer.Element {
-    	static get is() { return 'circle-el' }
-    	constructor() {
-    		super()
-    		console.log('CircleEl.constructor')
+    Polymer({
+    	is: 'circle-el'
+    
+    	, created: function() {
+    		console.log('CircleEl.reated')
     		circleEl = this
     		TS.load('https://cdn.rawgit.com/topseed/topseed-polymer/master/_sharedComps/vendor/circlesMOD.js')
     		.then(circleEl.loadedLib)
     	}
-    	loadedLib() {
+    	, loadedLib: function() {
     		if (circleEl._loaded) return
     		circleEl._loaded = true
     		console.log('circleEl.loadedlib')
@@ -41,13 +41,13 @@
     			styleText:           true
     		})
     	}
-    	init(_blx) {
+    	, init: function(_blx) {
     		_blx.on('mySelection', function(data) { //incoming
     			circleEl.circle.update(data.circleVal)
     		})
     	}	
-    }
+    })
     
-    customElements.define(CircleEl.is, CircleEl);	
+    //customElements.define(CircleEl.is, CircleEl);	
   </script>
 </dom-module>
