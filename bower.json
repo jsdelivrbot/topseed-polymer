@@ -1,20 +1,20 @@
 {
-	"name": "country-select",
-	"version": "0.0.1",
-	"description": "Collection",
-	"main": "country-select.html",
-	"authors": [
-		"wolfgang@gmail.com"
-	],
-	"license": "MIT",
-	"keywords": [
-		"element-collection",
-		"web",
-		"component",
-		"web component",
-		"web-components"
-	],
-	"dependencies": {
-	}
+  "name": "country-select",
+  "version": "0.0.1",
+  "description": "Collection",
+  "main": "country-select.html",
+  "authors": [
+    "wolfgang@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "element-collection",
+    "web",
+    "component",
+    "web component",
+    "web-components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.9.3"
+  }
 }
- 

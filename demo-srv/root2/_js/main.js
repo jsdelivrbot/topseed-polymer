@@ -18,7 +18,7 @@ var TM = {
 			, TS.load('/_js/BDS.js')
 		])
 		.then(function(){
-			return TS.load('/_js/tp2-1.0.js')
+			return TS.load('/_js/tp1-1.0.js')
 		})	
 		.then(TM.libsLoaded)
 	}	
