@@ -36,7 +36,7 @@ dom-module(id='gauge-el')
 					title: 'Visitors'
 				})
 			}//loaded
-			, function: init(_blx) {
+			, init: function(_blx) {
 				_blx.on('mySelection', function(data) { 
 					gaugeEl.g.refresh(data.gaugeVal)
 				})
