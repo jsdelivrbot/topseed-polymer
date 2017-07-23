@@ -10,11 +10,11 @@ dom-module(id='gauge-el')
 
 	//http://justgage.com/ 
 	script.
-		var gaugeEl //instance
-		class GaugeEl extends Polymer.Element {
-			static get is() { return 'gauge-el' }
-			constructor() {
-				super()
+		var circleEl
+		Polymer({
+			is: 'gauge-el'
+
+			, created: function() {
 				gaugeEl = this
 				console.log('GaugeEl.constructor')
 				Promise.all([
@@ -22,7 +22,7 @@ dom-module(id='gauge-el')
 					TS.load('https://cdn.rawgit.com/topseed/topseed-polymer/master/_sharedComps/vendor/justgage.js')
 				]).then(gaugeEl.loadedLib)
 			}
-			loadedLib() {
+			, loadedLib: function() {
 				if (gaugeEl._loaded) return
 				gaugeEl._loaded = true
 				console.log('GaugeEl.loadedLib')
@@ -36,11 +36,11 @@ dom-module(id='gauge-el')
 					title: 'Visitors'
 				})
 			}//loaded
-			init(_blx) {
+			, function: init(_blx) {
 				_blx.on('mySelection', function(data) { 
 					gaugeEl.g.refresh(data.gaugeVal)
 				})
 			}
-		}
+		})
 
-		customElements.define(GaugeEl.is, GaugeEl);	
+		//customElements.define(GaugeEl.is, GaugeEl);	
