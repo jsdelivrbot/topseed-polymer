@@ -8,18 +8,15 @@ var TM = {
 		return Promise.all([
 			TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/vendor/jquery.jsForm.min.js')
 			, TS.load('//cdn.jsdelivr.net/dot.js/1.1.1/doT.min.js')
-			//, TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tw0-1.0.js').then(function(){TW.init()}) //Support for Standard Web Component
-			//, TS.load('/bower_components/webcomponentsjs/webcomponents-loader.js') 
-			, TS.load('/bower_components/webcomponentsjs/webcomponents.js') //Polymer Polyfills
+			, TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tw0-1.0.js').then(function(){TW.init()}) //Standard Polyfills and Helper
+			, TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tp1-1.0.js') //Late-loader for Polymer components
+			, TS.load('/bower_components/webcomponentsjs/HTMLImports.min.js') //Polyfill used in late-loader
 			, TS.load('/bower_components/polymer/polymer.html') //Support for Polymer 1
 			//, TS.load('//cdn.jsdelivr.net/riot/3.4.4/riot+compiler.min.js') //Support for RIOT
 			, TS.load('//rawgit.com/topseed/topseed-turbo/master/release/topseed-turbo-latest.js')
 			, TS.load('/_js/BLX.js')
 			, TS.load('/_js/BDS.js')
 		])
-		.then(function(){
-			return TS.load('/_js/tp1-1.0.js')
-		})	
 		.then(TM.libsLoaded)
 	}	
 
