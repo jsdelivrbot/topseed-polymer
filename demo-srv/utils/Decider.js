@@ -3,7 +3,7 @@ const pug = require('pug')
 
 const isj = require('is_js')
 
-const Util = require('topseed-util')
+const Util = require('topseed-utils')
 const U = new Util() 
 
 // ###################### middle filter
@@ -21,8 +21,15 @@ var options = {}
 options.pretty = true
 
 function pugComp(req,res) {
-	const pgPath = U.getPath(ROOT,req)
+	var pgPath = U.getPath(ROOT,req)
+	
 	const ignore = pathContains(pgPath, ServerConfig.PUG_EXCLUDE)
+	
+	//U.getPath appends a trailing slash, for linux we need to remove it.
+	if (isj.endWith(pgPath,'/')) {
+		pgPath = pgPath.substring(0, (pgPath.length)-1)
+	}
+
 	const requestedResource = U.replace(pgPath, '.html', '.pug')
 	res.header('Content-Type', 'text/html')
 	U.cacheQuick(res)
@@ -43,7 +50,7 @@ function pathContains(path, arr)
 	for (i = 0; i < arr.length; i++) {
 		if (path.indexOf(arr[i])> -1) return true
 	}
-	return false			
+	return false
 }
 
 //**************** */
@@ -57,7 +64,7 @@ exports.decide = function (req, res, next) {//decide based on port
 		next() // it is a static asset, ex: .jpg, .css
 	} else { // no dot, it is a path:
 		try {
-			console.log(req.socket.localPort)
+			//console.log(req.socket.localPort)
 
 			const pgPath = U.getPath(ROOT,req)
 			console.log('requested:'+pgPath )
