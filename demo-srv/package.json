@@ -1,10 +1,10 @@
 {
-	"name": "topseed-webcomps",
+	"name": "topseed-polymer",
 	"description": "Best Practices for Web Components",
 	"version": "1.0.1",
 	"repository": {
 			"type": "git",
-			"url": "https://github.com/topseed/topseed-webcomps.git"
+			"url": "https://github.com/topseed/topseed-polymer.git"
 	},
 	"license": "SEE LICENSE IN LICENSE.md",
 	"engines": {
