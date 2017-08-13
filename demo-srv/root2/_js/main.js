@@ -8,7 +8,7 @@ var TM = {
 		return Promise.all([
 			TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/vendor/jquery.jsForm.min.js')
 			, TS.load('//cdn.jsdelivr.net/dot.js/1.1.1/doT.min.js')
-			, TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tw0-1.0.js').then(function(){TW.init()}) //Standard Polyfills and Helper
+			, TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tw-4.1.js').then(function(){TW.init()}) //Standard Polyfills and Helper
 			, TS.load('//cdn.rawgit.com/topseed/topseed-turbo/master/webComps/tp1-1.0.js') //Late-loader Helper for Polymer components
 			, TS.load('/bower_components/webcomponentsjs/HTMLImports.min.js') //Polyfill used in late-loader
 			, TS.load('/bower_components/polymer/polymer.html') //Support for Polymer (1.9.3)
